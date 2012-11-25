@@ -1,25 +1,94 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
 
-    <groupId>org.buildsomethingawesome</groupId>
-    <artifactId>awesome-lib</artifactId>
-    <version>1.0</version>
+    <groupId>org.buildsomethingawesome.lib</groupId>
+    <artifactId>awesome-java-swing</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>awesome-lib</name>
-    <url>http://maven.apache.org</url>
+    <name>Awesome Library (Java Swing)</name>
+    <description>Stuff to make Java programming easier</description>
+    <url>http://github.com/buildsomethingawesome/awesome-lib-java-swing</url>
+    <licenses>
+        <license>
+            <name>The GNU General Public License v3.0</name>
+            <url>http://www.gnu.org/copyleft/gpl.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <issueManagement>
+        <url>http://github.com/buildsomethingawesome/awesome-lib-java-swing/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:https://github.com/buildsomethingawesome/awesome-lib-java-swing.git</connection>
+        <developerConnection>scm:git:git@github.com:buildsomethingawesome/awesome-lib-java-swing.git
+        </developerConnection>
+        <url>https://github.com/buildsomethingawesome/awesome-lib-java-swing</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>avh4</id>
+            <name>Aaron VonderHaar</name>
+            <email>aaron@buildsomethingawesome.org</email>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <hamcrest.version>1.3</hamcrest.version>
+        <junit.version>4.11</junit.version>
+        <mockito.version>1.9.5</mockito.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-core</artifactId>
+                <version>${hamcrest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-library</artifactId>
+                <version>${hamcrest.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest-integration</artifactId>
+                <version>${hamcrest.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

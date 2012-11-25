@@ -1,6 +1,4 @@
-package org.buildsomethingawesome.lib
-
--lib;
+package org.buildsomethingawesome.lib;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

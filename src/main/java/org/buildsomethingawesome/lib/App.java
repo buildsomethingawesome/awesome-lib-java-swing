@@ -1,6 +1,4 @@
-package org.buildsomethingawesome.lib
-
--lib;
+package org.buildsomethingawesome.lib;
 
 /**
  * Hello world!
